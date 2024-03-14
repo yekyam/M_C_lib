@@ -1,7 +1,7 @@
-#ifndef MS_C_LIB
-#define MS_C_LIB
+#ifndef M_C_LIB
+#define M_C_LIB
 /*
-* M(anuel)'s C lib - a header-only library for common c functions that aren't standard.
+* Manuel's C lib - a header-only library for common c functions that aren't standard.
 * 
 */
 
