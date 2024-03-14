@@ -26,6 +26,12 @@ char* Mstrdup(char* ptr) {
   return str;
 }
 
+/*
+ * Mread_line - Reads a line (aka up to a newline or EOF) from the given FILE pointer. Automatically allocates memory for the string. Replaces the EOF or newline
+ *  with a null terminator.
+ * @param fp The file pointer to read from.
+ * @return A heap-allocated, null-terminated string 
+ */ 
 char *Mread_line(FILE* fp)
 {
   // credit to https://brennan.io/2015/01/16/write-a-shell-in-c/
