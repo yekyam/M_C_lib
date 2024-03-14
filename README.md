@@ -9,3 +9,4 @@ A header-only collection of functions I end up using a lot. Useful as a referenc
 ### TODO
 - Functions to work with a 1d array as a 2d array 
 - Vector and list types
+- Hashmap 
