@@ -13,7 +13,6 @@
  * Mstrdup - Duplicates the contents of a string into a new, heap-allocated block
  * @param ptr The string to duplicate
  * @return Null if malloc returns null, else a string (char*)
- *
  */
 char* Mstrdup(char* ptr) {
   char* str;
