@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include <stdarg.h>
 
 /*
  * Mstrdup - Duplicates the contents of a string into a new, heap-allocated block
@@ -67,5 +68,36 @@ char *Mread_line(FILE* fp)
   }
 }
 
+/* Concactenates all of the passed in strings by automatically allocating memory. 
+ * @param str One or more strings to concactenate
+ * @return A heap-allocated, null-terminated string.
+ */
+char* Mstrcat(const char* str, ...)
+{
+	va_list args;
+	va_start(args, str);
+	if (str == NULL)
+	{
+		return NULL;
+	}
+	size_t current_size = strlen(str);
+	char *result = calloc(current_size, sizeof(char));
+
+	memcpy(result, str, current_size);
+
+	char *next_str = NULL;
+
+	while ((next_str = va_arg(args, char*)) != NULL)
+	{
+		size_t size = strlen(next_str);
+		result = realloc(result, current_size + size);
+		memcpy(result + current_size, next_str, size);
+		current_size += size;
+	}
+
+	result = realloc(result, current_size + 1);
+	result[current_size] = 0;
+	return result;
+}
 
 #endif
